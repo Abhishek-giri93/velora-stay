@@ -41,7 +41,15 @@
                   <div class="invalid-feedback">Price should be valid.</div>
                 </div>
               </div>
-              <!-- category -->
+              
+
+              <div class="col-md-6">
+                <label for="location" class="form-label fw-semibold">Location</label>
+                <input type="text" class="form-control" id="location" name="listing[location]" placeholder="e.g. Goa, California" required>
+                <div class="invalid-feedback">Location should be valid</div>
+              </div>
+            </div> 
+            <!-- category -->
               <div class="mb-3">
                 <label for="category" class="form-label">Select Category</label>
                 <select name="listing[category]" id="category" class="form-select" required>
@@ -60,14 +68,6 @@
                 </select>
               </div>
               <!-- category end-->
-
-              <div class="col-md-6">
-                <label for="location" class="form-label fw-semibold">Location</label>
-                <input type="text" class="form-control" id="location" name="listing[location]" placeholder="e.g. Goa, California" required>
-                <div class="invalid-feedback">Location should be valid</div>
-              </div>
-            </div> 
-        
             <div class="mb-4">
               <label for="country" class="form-label fw-semibold">Country</label>
               <input type="text" id="country" class="form-control" name="listing[country]" placeholder="e.g. India" required>

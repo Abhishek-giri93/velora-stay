@@ -60,8 +60,7 @@
     </div>
   </div>
 </div> 
-
-<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 mt-3 justify-content-center">
+<div class="row">
   <% if (allListing.length === 0) { %>
     <div class="col-12 mt-5">
       <div class="d-flex flex-column justify-content-center align-items-center text-center">
@@ -74,7 +73,10 @@
         <a href="/listings" class="btn btn-dark mt-2 px-4">Clear all filters</a>
       </div>
     </div>
-  <% } else { %>
+  <% } %>
+</div>
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 mt-3">
+   <% if (allListing.length !== 0) { %>
     <% for(let listing of allListing){ %>
       <div class="col">
         <a href="/listings/<%= listing._id %>" class="listing-link">
