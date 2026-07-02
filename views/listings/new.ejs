@@ -1,0 +1,87 @@
+<% layout("/layouts/boilerplate") -%>
+<body>
+  <div class="container my-5 d-flex justify-content-center align-items-center">
+    <div class="row w-100 justify-content-center">
+      <div class="col-12 col-md-10 col-lg-8">
+        <div class="card shadow border-0 rounded-4 p-4 p-md-5 bg-white">
+          
+          <div class="card-title text-center mb-4">
+            <h1 class="fw-bold text-dark">Create New Listing</h1>
+            <p class="text-muted small">Fill out the form below to add a new property or item</p>
+          </div>
+          
+          <form method="POST" action="/listings" class="needs-validation" enctype="multipart/form-data" novalidate>
+        
+            <div class="mb-3">
+              <label for="title" class="form-label fw-semibold">Title</label>
+              <input type="text" class="form-control" id="title" name="listing[title]" placeholder="e.g. Cozy Beachfront Villa" required>
+              <div class="valid-feedback">Title looks good!!</div>
+              <div class="invalid-feedback">Title should be valid.</div>
+            </div>
+
+
+            <div class="mb-3">
+              <label for="image" class="form-label fw-semibold">Upload image</label>
+              <input type="file" id="image" class="form-control" name="listing[image]" rows="4" required>
+              
+            </div>
+        
+            <div class="mb-3">
+              <label for="description" class="form-label fw-semibold">Description</label>
+              <textarea id="description" class="form-control" name="listing[description]" rows="4" placeholder="Describe your listing in detail..." required></textarea>
+              <div class="invalid-feedback">Description should be valid.</div>
+            </div>
+        
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <label for="price" class="form-label fw-semibold">Price (in USD/INR)</label>
+                <div class="input-group">
+                  <span class="input-group-text">&#8377;</span>
+                  <input type="text" class="form-control" id="price" name="listing[price]" placeholder="0.00" min="0" required>
+                  <div class="invalid-feedback">Price should be valid.</div>
+                </div>
+              </div>
+              <!-- category -->
+              <div class="mb-3">
+                <label for="category" class="form-label">Select Category</label>
+                <select name="listing[category]" id="category" class="form-select" required>
+                  <option value="" disabled selected>Choose a category...</option>
+                  <option value="Trending">Trending</option>
+                  <option value="Rooms">Rooms</option>
+                  <option value="Iconic Cities">Iconic Cities</option>
+                  <option value="Mountains">Mountains</option>
+                  <option value="Castles">Castles</option>
+                  <option value="Camping">Camping</option>
+                  <option value="Farms">Farms</option>
+                  <option value="Arctic">Arctic</option>
+                  <option value="Amezing Pools">Amezing Pools</option>
+                  <option value="Boats">Boats</option>
+                  <option value="Domes">Domes</option>
+                </select>
+              </div>
+              <!-- category end-->
+
+              <div class="col-md-6">
+                <label for="location" class="form-label fw-semibold">Location</label>
+                <input type="text" class="form-control" id="location" name="listing[location]" placeholder="e.g. Goa, California" required>
+                <div class="invalid-feedback">Location should be valid</div>
+              </div>
+            </div> 
+        
+            <div class="mb-4">
+              <label for="country" class="form-label fw-semibold">Country</label>
+              <input type="text" id="country" class="form-control" name="listing[country]" placeholder="e.g. India" required>
+              <div class="invalid-feedback">Country should be valid.</div>
+            </div>
+        
+            <div class="d-grid gap-2">
+              <button type="submit" class="btn btn-danger btn-lg rounded-3 fw-bold shadow-sm">
+                <i class="bi bi-plus-circle me-2"></i>Create Listing
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
